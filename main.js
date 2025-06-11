@@ -53,6 +53,8 @@ function renderTasks() {
         <p class="taskDate">Task added on ${task.createdAt}</p>
       </div>
       <div class="taskActions">
+          <button class="moveUp-btn" data-index="${index}">⬆️</button>
+  <button class="moveDown-btn" data-index="${index}">⬇️</button>
         <button class="editTask-btn" data-index="${index}">Edit</button>
         <button class="deleteTask-btn" data-index="${index}">Delete</button>
         <input type="checkbox" class="taskStatus" />
@@ -82,6 +84,19 @@ function renderTasks() {
       }
     });
   });
+  document.querySelectorAll(".moveUp-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const index = parseInt(e.target.getAttribute("data-index"));
+      moveTask(index, index - 1);
+    });
+  });
+  document.querySelectorAll(".moveDown-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const index = parseInt(e.target.getAttribute("data-index"));
+       moveTask(index, index + 1);
+    });
+  });
+
 }
 function markTaskAsCompleted(index) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -135,6 +150,19 @@ function deleteTask(index) {
   tasks.splice(index, 1);
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
+}
+function moveTask(fromIndex,toIndex){
+  let tasks=JSON.parse(localStorage.getItem("tasks")) || [];
+  if (toIndex < 0 || toIndex >= tasks.length || fromIndex < 0 || fromIndex >= tasks.length) {
+    return; 
+  }
+  const [movedTask] = tasks.splice(fromIndex, 1);
+  tasks.splice(toIndex, 0, movedTask);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  renderTasks();
+
+  
+
 }
 
 window.onload = function () {
