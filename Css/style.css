@@ -1,0 +1,92 @@
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #c72121;
+  text-align: center;
+}
+.addTaskForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 50px;
+}
+.addTaskForm input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.addTask-btn {
+  padding: 10px 20px;
+  background-color: #33af02;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.myTasks h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #c72121;
+}
+
+.showCompletedTasks {
+  text-decoration: none;
+  color: #c72121;
+  font-weight: bold;
+}
+.taskList,
+.completedTasksList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.task-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #105599;
+  padding: 20px;
+  width: 100%;
+}
+.taskInformation {
+  width: 90%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.taskActions {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.taskActions button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+}
+.taskStatus {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.confirmEdit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

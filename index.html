@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Css/style.css" />
+    <link rel="stylesheet" href="./Css/bsae.css" />
+</head>
+<header class="header">
+    <a href="./index.html" class="logo">To-do-list</a>
+    <a href="./CompletedtTasks.html" class="showCompletedTasks">Show Completed Tasks</a>
+</header>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="ToDoList">
+                <div>
+                    <form class="addTaskForm">
+                        <input type="text" class="taskName" placeholder="Add a new task name..." required />
+                        <input type="text" class="taskDescription" placeholder="Add a description..." required />
+                        <button type="submit" class="addTask-btn">Add</button>
+                        <button type="button" class="confirmEdit-btn d-none" >Confirm Edit</button>
+                    </form>
+
+                </div>
+                <div class="myTasks">
+                    <h2>My Tasks</h2>
+                    <div class="taskList"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
